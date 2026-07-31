@@ -16,7 +16,11 @@ export function p95(values) {
 }
 
 export function summarize(rows, column) {
-  const values = rows.map((row) => Number(row[column]));
+  // A blank cell is not a zero. See CLAUDE.md.
+  const values = rows
+    .map((row) => row[column])
+    .filter((cell) => cell !== "" && cell != null)
+    .map(Number);
   if (!values.length || values.some(Number.isNaN)) return null;
   return {
     n: values.length,

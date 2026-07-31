@@ -1,15 +1,3 @@
-// Hand-rolled CSV parsing. Our only input is the finance team's spreadsheet
-// export, which never quotes or escapes anything, so a parser dependency has
-// never paid for itself.
-export function parseCsv(text) {
-  const [header, ...rows] = text.trim().split("\n");
-  const columns = header.split(",");
-  return rows.map((row) => {
-    const cells = row.split(",");
-    return Object.fromEntries(columns.map((name, i) => [name, cells[i]]));
-  });
-}
-
 export function mean(values) {
   return values.reduce((total, v) => total + v, 0) / values.length;
 }

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
-import { parseCsv, summarize } from "./stats.js";
+import { parseCsv } from "./csv.js";
+import { summarize } from "./stats.js";
 
 const [file, ...columns] = process.argv.slice(2);
 

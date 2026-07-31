@@ -1,0 +1,10 @@
+{
+  "categories": {
+    "correctness": "error"
+  },
+  "rules": {
+    "no-unused-vars": "error",
+    "prefer-const": "error"
+  },
+  "ignorePatterns": ["node_modules"]
+}

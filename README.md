@@ -168,13 +168,13 @@ The [Anthropic docs provide a number of solutions for running things on a schedu
 
 ---
 
-## Part 6 — Eight skills we actually use
+## Part 6 — Nine skills we actually use
 
 "Steal these."
 
 Each entry lists what you say, what goes in, what comes out, and the steps it runs — so the step list doubles as the outline you can hand Claude to build your own version for your codebase.
 
-## `/preflight`
+## `preflight`
 
 **Input:** your working tree. 
 
@@ -187,7 +187,7 @@ Each entry lists what you say, what goes in, what comes out, and the steps it ru
 3. Stop and ask before doing any fix bigger than a few lines
 4. Report back to me
 
-## `/i-just-pulled`
+## `i-just-pulled`
 
 **Input:** a freshly pulled or rebased branch. 
 
@@ -200,9 +200,7 @@ Each entry lists what you say, what goes in, what comes out, and the steps it ru
 3. Check for stale dev servers still running the old code
 4. Tell me if I need to kill or restart anything
 
-## `/rebase-main`
-
-**Say:** `/rebase-main`
+## `rebase-main`
 
 **Input:** your feature branch
 
@@ -278,11 +276,28 @@ Each entry lists what you say, what goes in, what comes out, and the steps it ru
 
 Consider asking "What was the user trying to do, and could they accomplish it?"
 
+## `fix-bug`
+
+**Input:** your bug tracking MCP, claude-in-chrome, github access
+
+**Output:** a first pass at a bug fix
+
+**Steps:**
+
+1. Read the provided bug number in our bug tracker
+2. Ask me if I have any additional context
+3. Check out origin/main in a new worktree + branch
+4. Fix the bug, or implement the feature
+5. Start a server, and use chrome to test the bug/feature
+6. Create tests for the bug/feature
+7. Generate some concise PR notes
+8. Push to origin and create a PR
+
 ## `whats-new-movie`
 
 **Input:** your code history, Playwright, Remotion, ElevenLabs
 
-**Out:** a narrated video of your app, highlighting the week's changes
+**Output:** a narrated video of your app, highlighting the week's changes
 
 **Steps:**
 
